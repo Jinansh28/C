@@ -2,20 +2,19 @@
 int main(){
     int a[10];
     for(int i=0;i<10;i++){
-        printf("Element %d :",i+1);
         scanf("%d",&a[i]);
     }
     for(int i=0;i<10;i++){
-        for(int j=i+1;j<10;j++){
-            if(a[i]>a[j]){
-                int temp=a[i];
-                a[i]=a[j];
-                a[j]=temp;
+        for(int j=0;j<=10-i-1;j++){
+            if(a[j]>a[j+1]){
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
             }
         }
     }
     for(int i=0;i<10;i++){
-        printf("Element %d:%d \n",i+1,a[i]);
+        printf("%d ",a[i]);
     }
     return 0;
 }

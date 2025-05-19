@@ -1,0 +1,1 @@
+struct Node *p4=insertNode(root,40);

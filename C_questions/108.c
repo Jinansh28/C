@@ -2,13 +2,17 @@
 int main(){
     int a[10];
     for(int i=0;i<10;i++){
-        printf("Element %d:");
         scanf("%d",&a[i]);
     }
     for(int i=0;i<10;i++){
-        for(int j=i+1;j<10;j++){
-            if(a[j])
+        int curr=a[i],prev=i-1;
+        while(prev>=0 && a[prev]>curr){
+            a[prev+1]=a[prev--];
         }
+        a[prev+1]=curr;
+    }
+    for(int i=0;i<10;i++){
+        printf("%d ",a[i]);
     }
     return 0;
 }
